@@ -50,15 +50,22 @@ export default function Home() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3" data-testid="header-logo">
               <Flag className="w-6 h-6 text-primary" data-testid="icon-header-flag" />
-              <h1 className="text-lg md:text-xl font-bold text-foreground">अधिकृत ग्रामपंचायत पोर्टल</h1>
+              <h1 className="text-lg md:text-xl font-bold text-foreground">अधिकृत ग्रामपंचायत पोर्टल NSA-IT Point द्वारा निर्मित</h1>
             </div>
-            <nav className="hidden md:flex items-center gap-6" data-testid="nav-main">
+            <nav className="hidden md:flex items-center gap-4" data-testid="nav-main">
               <button
                 onClick={() => scrollToSection('about')}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 data-testid="nav-link-about"
               >
                 परिचय
+              </button>
+              <button
+                onClick={() => scrollToSection('history')}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                data-testid="nav-link-history"
+              >
+                इतिहास
               </button>
               <button
                 onClick={() => scrollToSection('schemes')}
@@ -73,6 +80,34 @@ export default function Home() {
                 data-testid="nav-link-infrastructure"
               >
                 सुविधा
+              </button>
+              <button
+                onClick={() => scrollToSection('health')}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                data-testid="nav-link-health"
+              >
+                आरोग्य
+              </button>
+              <button
+                onClick={() => scrollToSection('education')}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                data-testid="nav-link-education"
+              >
+                शिक्षण
+              </button>
+              <button
+                onClick={() => scrollToSection('agriculture')}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                data-testid="nav-link-agriculture"
+              >
+                शेती
+              </button>
+              <button
+                onClick={() => scrollToSection('gallery')}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                data-testid="nav-link-gallery"
+              >
+                गॅलरी
               </button>
               <button
                 onClick={() => scrollToSection('news')}
@@ -108,6 +143,13 @@ export default function Home() {
                 परिचय
               </button>
               <button
+                onClick={() => scrollToSection('history')}
+                className="block w-full text-left px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                data-testid="nav-link-mobile-history"
+              >
+                इतिहास
+              </button>
+              <button
                 onClick={() => scrollToSection('schemes')}
                 className="block w-full text-left px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
                 data-testid="nav-link-mobile-schemes"
@@ -120,6 +162,34 @@ export default function Home() {
                 data-testid="nav-link-mobile-infrastructure"
               >
                 सुविधा
+              </button>
+              <button
+                onClick={() => scrollToSection('health')}
+                className="block w-full text-left px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                data-testid="nav-link-mobile-health"
+              >
+                आरोग्य
+              </button>
+              <button
+                onClick={() => scrollToSection('education')}
+                className="block w-full text-left px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                data-testid="nav-link-mobile-education"
+              >
+                शिक्षण
+              </button>
+              <button
+                onClick={() => scrollToSection('agriculture')}
+                className="block w-full text-left px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                data-testid="nav-link-mobile-agriculture"
+              >
+                शेती
+              </button>
+              <button
+                onClick={() => scrollToSection('gallery')}
+                className="block w-full text-left px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                data-testid="nav-link-mobile-gallery"
+              >
+                गॅलरी
               </button>
               <button
                 onClick={() => scrollToSection('news')}
@@ -349,7 +419,7 @@ export default function Home() {
       </section>
 
       {/* Village History */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section id="history" className="py-16 md:py-24 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" data-testid="heading-history">ग्राम इतिहास</h2>
@@ -687,7 +757,7 @@ export default function Home() {
       </section>
 
       {/* Photo Gallery */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section id="gallery" className="py-16 md:py-24 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4" data-testid="heading-gallery">फोटो गॅलरी</h2>
@@ -776,8 +846,8 @@ export default function Home() {
               <Flag className="w-5 h-5 text-primary" />
               <h3 className="text-xl font-bold text-foreground">अधिकृत ग्रामपंचायत पोर्टल</h3>
             </div>
-            <p className="text-sm text-muted-foreground mb-4">पारदर्शक प्रशासन, समृद्ध वारसा, आणि प्रगतीशील विकास</p>
-            <p className="text-xs text-muted-foreground" data-testid="text-copyright">© 2024 ग्रामपंचायत. सर्व हक्क राखीव.</p>
+            <p className="text-sm text-muted-foreground mb-4">पारदर्शक प्रशासन, समृद्ध वारसा, आणि प्रगतीशील विकास NSA-IT Point द्वारा निर्मित आणि प्रस्तुत.</p>
+            <p className="text-xs text-muted-foreground" data-testid="text-copyright">© 2025 ग्रामपंचायत. सर्व हक्क राखीव.</p>
           </div>
         </div>
       </footer>
