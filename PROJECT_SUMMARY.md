@@ -9,19 +9,21 @@ A fully functional, **100% frontend-only** Gram Panchayat (Village Council) Port
 ## 📊 What Was Built
 
 ### Features Delivered
+
 ✅ **Complete Marathi Interface** - All text in Marathi with Noto Sans Devanagari font
 ✅ **Responsive Design** - Works perfectly on mobile, tablet, and desktop
 ✅ **9 Main Sections** with smooth scroll navigation:
-   1. Hero with statistics
-   2. परिचय (Panchayat Introduction)
-   3. इतिहास (Village History)
-   4. योजना (Government Schemes)
-   5. सुविधा (Infrastructure & Utilities)
-   6. आरोग्य (Health Services)
-   7. शिक्षण (Education Institutions)
-   8. शेती (Agriculture Information)
-   9. गॅलरी (Photo Gallery)
-   10. बातम्या (News & Updates)
+
+1.  Hero with statistics
+2.  परिचय (Panchayat Introduction)
+3.  इतिहास (Village History)
+4.  योजना (Government Schemes)
+5.  सुविधा (Infrastructure & Utilities)
+6.  आरोग्य (Health Services)
+7.  शिक्षण (Education Institutions)
+8.  शेती (Agriculture Information)
+9.  गॅलरी (Photo Gallery)
+10. बातम्या (News & Updates)
 
 ✅ **Sticky Navigation Bar** - All 9 tabs visible on desktop, hamburger menu on mobile
 ✅ **No Backend** - Pure frontend, no database, no server operations
@@ -45,24 +47,16 @@ A fully functional, **100% frontend-only** Gram Panchayat (Village Council) Port
 
 ```
 gram-panchayat-portal/
-├── client/                      # Frontend application
-│   ├── src/
-│   │   ├── pages/home.tsx      # All portal content (EDIT HERE)
-│   │   ├── components/         # Reusable UI components
-│   │   ├── lib/                # Utilities
-│   │   ├── hooks/              # Custom React hooks
-│   │   ├── App.tsx             # Main app component
-│   │   └── index.css           # Global styles & colors (EDIT HERE)
-│   ├── index.html              # HTML entry point
-│   └── public/                 # Static assets
-│
-├── server/
-│   └── index-dev.ts            # Dev server (Express + Vite)
-│
+├── src/                        # Frontend application
+│   ├── pages/home.tsx          # All portal content (EDIT HERE)
+│   ├── components/             # Reusable UI components
+│   ├── lib/                    # Utilities
+│   ├── hooks/                  # Custom React hooks
+│   ├── App.tsx                 # Main app component
+│   └── index.css               # Global styles & colors (EDIT HERE)
+├── public/                     # Static assets
 ├── attached_assets/            # Images & media files
-│
 ├── dist/                       # Build output (created after npm run build)
-│   └── public/                 # Optimized files for deployment
 │
 ├── Configuration Files:
 │   ├── vite.config.ts          # Vite build config
@@ -104,13 +98,13 @@ npm run check
 
 ## 📝 Key Files to Edit
 
-| Want to Change | File | Location |
-|---|---|---|
-| Portal content/text | `client/src/pages/home.tsx` | Line numbers marked |
-| Colors & styling | `client/src/index.css` | `:root` section |
-| Fonts | `client/index.html` | `<head>` section |
-| Component styling | `client/src/index.css` | CSS classes |
-| Navigation links | `client/src/pages/home.tsx` | Navbar section |
+| Want to Change      | File                 | Location            |
+| ------------------- | -------------------- | ------------------- |
+| Portal content/text | `src/pages/home.tsx` | Line numbers marked |
+| Colors & styling    | `src/index.css`      | `:root` section     |
+| Fonts               | `index.html`         | `<head>` section    |
+| Component styling   | `src/index.css`      | CSS classes         |
+| Navigation links    | `src/pages/home.tsx` | Navbar section      |
 
 ---
 
@@ -127,21 +121,25 @@ npm run check
 ## 🌐 Deployment Options
 
 ### Recommended: Vercel
+
 ```bash
 npm install -g vercel
 vercel
 ```
+
 - Free tier
 - Auto HTTPS
 - CDN worldwide
 - Deploy in 2 minutes
 
 ### Alternative: Netlify
+
 - Drag & drop deploy
 - Free tier
 - Easy custom domain
 
 ### Alternative: GitHub Pages
+
 - Completely free
 - Good for developers
 - Takes 10 minutes
@@ -153,6 +151,7 @@ See `DEPLOYMENT.md` for detailed instructions.
 ## ✨ Key Highlights
 
 ### Frontend Excellence
+
 - ✅ 100% responsive (mobile-first)
 - ✅ Smooth scrolling navigation
 - ✅ Dark/Light theme ready
@@ -160,6 +159,7 @@ See `DEPLOYMENT.md` for detailed instructions.
 - ✅ SEO optimized
 
 ### Code Quality
+
 - ✅ TypeScript for type safety
 - ✅ Component-based architecture
 - ✅ Proper error boundaries
@@ -167,6 +167,7 @@ See `DEPLOYMENT.md` for detailed instructions.
 - ✅ Well-documented
 
 ### User Experience
+
 - ✅ Fast loading (Vite optimized)
 - ✅ No backend delays
 - ✅ Instant interactions
@@ -208,6 +209,7 @@ When you download, you get these guides:
 ## 🔄 Development Workflow
 
 ### Local Development
+
 ```bash
 npm run dev
 # Make changes
@@ -215,6 +217,7 @@ npm run dev
 ```
 
 ### Before Deployment
+
 ```bash
 npm run check    # Check for errors
 npm run build    # Create production build
@@ -222,9 +225,10 @@ npm run preview  # Test the build locally
 ```
 
 ### Deploy
+
 ```bash
 # Choose: Vercel, Netlify, or your server
-# Upload dist/public folder
+# Upload dist folder
 # Done!
 ```
 
@@ -247,6 +251,7 @@ npm run preview  # Test the build locally
 ## 🎉 You're All Set!
 
 The portal is complete and ready to:
+
 - ✅ Run locally
 - ✅ Customize content
 - ✅ Deploy to internet
@@ -257,13 +262,13 @@ The portal is complete and ready to:
 
 ## 📞 Quick Support
 
-| Problem | Solution |
-|---------|----------|
-| Port in use | `npm run dev -- --port 3000` |
-| Module error | `npm install` then `npm run dev` |
-| Build fails | `rm -rf node_modules && npm install` |
-| Styles missing | Restart dev server |
-| Content not showing | Check `client/src/pages/home.tsx` |
+| Problem             | Solution                             |
+| ------------------- | ------------------------------------ |
+| Port in use         | `npm run dev -- --port 3000`         |
+| Module error        | `npm install` then `npm run dev`     |
+| Build fails         | `rm -rf node_modules && npm install` |
+| Styles missing      | Restart dev server                   |
+| Content not showing | Check `src/pages/home.tsx`           |
 
 ---
 
@@ -272,8 +277,8 @@ The portal is complete and ready to:
 1. Download the project
 2. Run `npm install`
 3. Run `npm run dev`
-4. Open http://localhost:5000
-5. Edit content in `client/src/pages/home.tsx`
+4. Open http://localhost:5173
+5. Edit content in `src/pages/home.tsx`
 6. Deploy with `npm run build` + Vercel/Netlify
 
 ---

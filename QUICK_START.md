@@ -9,6 +9,7 @@
 ### Step 1: Open Terminal/Command Prompt
 
 Navigate to your downloaded project folder:
+
 ```bash
 cd gram-panchayat-portal
 ```
@@ -28,33 +29,41 @@ npm run dev
 ```
 
 You'll see:
+
 ```
-[express] serving on port 5000
+VITE v5.x  ready in < 500ms
+
+➜  Local:   http://localhost:5173/
 ```
 
-Open: **http://localhost:5000**
+Open: **http://localhost:5173**
 
 ---
 
 ## Commands Reference
 
 ### Start Development (Auto-reload)
+
 ```bash
 npm run dev
 ```
 
 ### Build for Production
+
 ```bash
 npm run build
 ```
-Creates optimized files in `dist/public/` folder
+
+Creates optimized files in the `dist/` folder
 
 ### Preview Production Build
+
 ```bash
 npm run preview
 ```
 
 ### Check TypeScript Errors
+
 ```bash
 npm run check
 ```
@@ -73,33 +82,36 @@ npm run check
 
 ## 📁 Where to Edit
 
-| Want to Change | Edit This File |
-|---|---|
-| Portal text/content | `client/src/pages/home.tsx` |
-| Colors | `client/src/index.css` |
-| Fonts | `client/index.html` |
-| Component styling | `client/src/index.css` |
+| Want to Change      | Edit This File       |
+| ------------------- | -------------------- |
+| Portal text/content | `src/pages/home.tsx` |
+| Colors              | `src/index.css`      |
+| Fonts               | `index.html`         |
+| Component styling   | `src/index.css`      |
 
 ---
 
 ## 🌍 Deploy to Internet
 
 ### Option A: Vercel (Fastest)
+
 ```bash
 npm install -g vercel
 vercel
 ```
 
 ### Option B: Netlify
+
 ```bash
 npm run build
-# Upload dist/public folder to Netlify
+# Upload the dist folder to Netlify
 ```
 
 ### Option C: GitHub Pages
+
 ```bash
 npm run build
-# Push dist/public to GitHub Pages
+# Push dist/ to GitHub Pages
 ```
 
 ---
@@ -107,17 +119,20 @@ npm run build
 ## ⚠️ Troubleshooting
 
 ### Port 5000 already in use?
+
 ```bash
 npm run dev -- --port 3000
 ```
 
 ### Module errors?
+
 ```bash
 npm install
 npm run dev
 ```
 
 ### Build failing?
+
 ```bash
 rm -rf node_modules
 npm install
@@ -130,14 +145,15 @@ npm run build
 
 ```
 gram-panchayat-portal/
-├── client/                    # All frontend code
-│   ├── src/
-│   │   ├── pages/home.tsx    # Main content file
-│   │   ├── components/       # Reusable components
-│   │   └── index.css         # Global styles
-│   └── index.html
-├── dist/                      # Build output (after npm run build)
-├── package.json              # Dependencies
+├── src/                     # Frontend React code
+│   ├── pages/home.tsx       # Main content file
+│   ├── components/          # Reusable components
+│   ├── hooks/               # Custom hooks
+│   ├── lib/                 # Utilities
+│   └── index.css            # Global styles
+├── public/                  # Static assets (favicon, etc.)
+├── dist/                    # Build output (after npm run build)
+├── package.json             # Dependencies
 ├── vite.config.ts           # Build config
 └── README.md                # Full documentation
 ```
@@ -147,10 +163,10 @@ gram-panchayat-portal/
 ## ✨ What's Next?
 
 1. Run `npm run dev`
-2. Open http://localhost:5000
-3. Edit `client/src/pages/home.tsx` to change content
+2. Open http://localhost:5173
+3. Edit `src/pages/home.tsx` to change content
 4. When ready: `npm run build`
-5. Deploy the `dist/public` folder anywhere
+5. Deploy the `dist` folder anywhere
 
 **Questions?** Check README.md or SETUP_INSTRUCTIONS.md
 

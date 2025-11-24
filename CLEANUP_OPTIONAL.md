@@ -17,9 +17,9 @@ replit.md               # Replit-specific metadata (can delete)
 ## Files to KEEP
 
 ```
-├── client/                      # ✅ KEEP - Frontend app
+├── src/                         # ✅ KEEP - Frontend app
+├── public/                      # ✅ KEEP - Static assets
 ├── attached_assets/             # ✅ KEEP - Images/assets
-├── server/index-dev.ts          # ✅ KEEP - Dev server
 ├── vite.config.ts               # ✅ KEEP - Build config
 ├── tailwind.config.ts           # ✅ KEEP - Tailwind config
 ├── package.json                 # ✅ KEEP - Dependencies
@@ -36,7 +36,8 @@ If you want the **absolute minimal** frontend-only setup:
 
 ```bash
 # Keep only essential folders
-client/              # Frontend React app
+src/                 # Frontend React app
+public/              # Static assets
 attached_assets/     # Images
 
 # Keep only essential files
@@ -56,7 +57,6 @@ QUICK_START.md      # Setup reference
 ```bash
 # These are auto-generated and not needed
 .replit             # Replit metadata
-server/             # Optional (if using npm scripts differently)
 components.json     # Shadcn config
 tsconfig.json       # Optional (if not using TypeScript in IDE)
 design_guidelines.md # Just a reference
@@ -69,11 +69,12 @@ replit.md           # Replit metadata
 
 - **Current size**: ~2-3 MB (with node_modules)
 - **After cleanup**: Same (node_modules size doesn't change)
-- **Build size**: ~200 KB (dist/public folder)
+- **Build size**: ~200 KB (dist folder)
 
 ## Recommendation
 
 We recommend **keeping all files as-is** because:
+
 1. ✅ Everything is needed for npm commands to work
 2. ✅ Documentation files help with maintenance
 3. ✅ Configuration files are referenced by build tools

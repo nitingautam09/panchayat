@@ -7,6 +7,7 @@ Welcome to **अधिकृत ग्रामपंचायत पोर्�
 ## ✅ What You Have
 
 A **100% frontend-only** Gram Panchayat portal with:
+
 - ✅ Marathi language interface
 - ✅ 9 main sections with smooth navigation
 - ✅ Responsive mobile design
@@ -19,33 +20,37 @@ A **100% frontend-only** Gram Panchayat portal with:
 ## 🚀 Run Locally in 30 Seconds
 
 ### 1. Install Node.js
+
 Download from: https://nodejs.org/ (version 18+)
 
 ### 2. Navigate to Project Folder
+
 ```bash
 cd gram-panchayat-portal
 ```
 
 ### 3. Install & Run
+
 ```bash
 npm install
 npm run dev
 ```
 
 ### 4. Open Browser
-Go to: **http://localhost:5000**
+
+Go to: **http://localhost:5173**
 
 ---
 
 ## 📚 Documentation Files
 
-| File | Purpose |
-|------|---------|
-| **QUICK_START.md** | Fast setup instructions |
-| **SETUP_INSTRUCTIONS.md** | Detailed step-by-step guide |
-| **README.md** | Complete project documentation |
-| **CLEANUP_OPTIONAL.md** | Optional file deletion guide |
-| **package.json** | Lists all dependencies |
+| File                      | Purpose                        |
+| ------------------------- | ------------------------------ |
+| **QUICK_START.md**        | Fast setup instructions        |
+| **SETUP_INSTRUCTIONS.md** | Detailed step-by-step guide    |
+| **README.md**             | Complete project documentation |
+| **CLEANUP_OPTIONAL.md**   | Optional file deletion guide   |
+| **package.json**          | Lists all dependencies         |
 
 ---
 
@@ -69,9 +74,10 @@ npm run check
 
 ## 📝 Edit Content
 
-All Marathi content is in: **`client/src/pages/home.tsx`**
+All Marathi content is in: **`src/pages/home.tsx`**
 
 Find sections like:
+
 - Line 55: Header/Title
 - Line 221: Quick Links (9 services)
 - Line 318: Panchayat Introduction
@@ -88,13 +94,14 @@ Find sections like:
 
 ## 🎨 Change Colors & Styling
 
-Edit: **`client/src/index.css`**
+Edit: **`src/index.css`**
 
 Find color variables in `:root` section:
+
 ```css
 :root {
-  --primary: 24 94% 52%;        /* Orange - Government colors */
-  --secondary: 217 33% 17%;     /* Dark blue */
+  --primary: 24 94% 52%; /* Orange - Government colors */
+  --secondary: 217 33% 17%; /* Dark blue */
   /* ... more colors ... */
 }
 ```
@@ -104,40 +111,47 @@ Find color variables in `:root` section:
 ## 🚀 Deploy to Internet
 
 ### Option 1: Vercel (Recommended - Fastest)
+
 ```bash
 npm install -g vercel
 vercel
 ```
+
 Takes 2 minutes, automatic HTTPS
 
 ### Option 2: Netlify
+
 ```bash
 npm run build
-# Drag dist/public folder to Netlify
+# Drag the dist folder to Netlify
 ```
 
 ### Option 3: Any Web Server
+
 ```bash
 npm run build
-# Copy dist/public contents to your server
+# Copy dist contents to your server
 ```
 
 ---
 
 ## ⚠️ Common Issues
 
-### "Port 5000 already in use"
+### "Port 5173 already in use"
+
 ```bash
 npm run dev -- --port 3000
 ```
 
 ### "Module not found"
+
 ```bash
 npm install
 npm run dev
 ```
 
 ### "npm: command not found"
+
 Install Node.js from https://nodejs.org/
 
 ---
@@ -147,23 +161,17 @@ Install Node.js from https://nodejs.org/
 ```
 gram-panchayat-portal/
 │
-├── client/                    ← Frontend React app
-│   ├── src/
-│   │   ├── pages/
-│   │   │   └── home.tsx      ← EDIT THIS FOR CONTENT
-│   │   ├── components/       ← UI components (buttons, cards, etc)
-│   │   ├── lib/              ← Utilities
-│   │   └── index.css         ← EDIT THIS FOR COLORS
-│   ├── index.html            ← HTML entry point
-│   └── public/               ← Static files
+├── src/                      ← Frontend React app
+│   ├── pages/
+│   │   └── home.tsx          ← EDIT THIS FOR CONTENT
+│   ├── components/           ← UI components (buttons, cards, etc)
+│   ├── lib/                  ← Utilities
+│   ├── hooks/                ← Custom hooks
+│   └── index.css             ← EDIT THIS FOR COLORS
 │
-├── server/
-│   └── index-dev.ts          ← Dev server (handles Vite)
-│
+├── public/                   ← Static assets (favicon)
 ├── attached_assets/          ← Images & media
-│
-├── dist/                      ← Build output (created after npm run build)
-│
+├── dist/                     ← Build output (created after npm run build)
 ├── vite.config.ts            ← Build configuration
 ├── tailwind.config.ts        ← Tailwind CSS config
 ├── package.json              ← Dependencies list
@@ -177,11 +185,11 @@ gram-panchayat-portal/
 
 ## 🎯 Typical Workflow
 
-1. **Edit content** → Edit `client/src/pages/home.tsx`
+1. **Edit content** → Edit `src/pages/home.tsx`
 2. **Save file** → Browser auto-refreshes (hot reload)
 3. **See changes** → Instant in browser
 4. **Ready to deploy?** → Run `npm run build`
-5. **Deploy** → Upload `dist/public` folder
+5. **Deploy** → Upload the `dist` folder
 
 ---
 
@@ -190,7 +198,7 @@ gram-panchayat-portal/
 ✅ Use `npm run dev` for editing (hot reload works great)
 ✅ Use `npm run build` only when deploying
 ✅ Keep all config files - they're needed
-✅ Edit only `client/src/pages/home.tsx` and `client/src/index.css`
+✅ Edit only `src/pages/home.tsx` and `src/index.css`
 ✅ Test on mobile - responsive design is important
 
 ---
@@ -209,22 +217,22 @@ gram-panchayat-portal/
 
 ## 📞 Quick Reference
 
-| Task | Command |
-|------|---------|
-| Start development | `npm run dev` |
-| Build for production | `npm run build` |
-| Preview build | `npm run preview` |
-| Check errors | `npm run check` |
-| See dependencies | `cat package.json` |
+| Task                 | Command            |
+| -------------------- | ------------------ |
+| Start development    | `npm run dev`      |
+| Build for production | `npm run build`    |
+| Preview build        | `npm run preview`  |
+| Check errors         | `npm run check`    |
+| See dependencies     | `cat package.json` |
 
 ---
 
 ## ✨ Next Steps
 
 1. ✅ Run `npm install && npm run dev`
-2. ✅ Open http://localhost:5000
+2. ✅ Open http://localhost:5173
 3. ✅ Click navbar links to test all sections
-4. ✅ Edit `client/src/pages/home.tsx` to customize
+4. ✅ Edit `src/pages/home.tsx` to customize
 5. ✅ Run `npm run build` when ready
 6. ✅ Deploy to Vercel/Netlify/or your server
 
@@ -235,6 +243,7 @@ gram-panchayat-portal/
 Everything is ready to use. No backend, no database, no complicated setup.
 
 **Questions?** Check the other documentation files:
+
 - QUICK_START.md
 - SETUP_INSTRUCTIONS.md
 - README.md

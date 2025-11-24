@@ -14,7 +14,8 @@ A beautiful, fully responsive government portal for village council administrati
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm (comes with Node.js)
 
 ### Installation
@@ -36,7 +37,7 @@ npm run dev
 # Build the application
 npm run build
 
-# The built files will be in dist/public folder
+# The built files will be in the dist folder
 
 # Preview production build
 npm run preview
@@ -46,17 +47,15 @@ npm run preview
 
 ```
 gram-panchayat-portal/
-├── client/                 # Frontend React application
-│   ├── src/
-│   │   ├── pages/        # React pages (home.tsx)
-│   │   ├── components/   # Reusable components
-│   │   ├── lib/          # Utilities and helpers
-│   │   ├── hooks/        # Custom React hooks
-│   │   ├── App.tsx       # Main app component
-│   │   └── index.css     # Global styles
-│   ├── index.html        # HTML entry point
-│   └── public/           # Static files
-├── attached_assets/      # Images and media
+├── public/              # Static assets
+├── src/                 # React application
+│   ├── pages/           # React pages (home.tsx)
+│   ├── components/      # Reusable components
+│   ├── lib/             # Utilities and helpers
+│   ├── hooks/           # Custom React hooks
+│   ├── App.tsx          # Main app component
+│   └── index.css        # Global styles
+├── attached_assets/     # Images and media
 ├── vite.config.ts       # Vite configuration
 ├── tailwind.config.ts   # Tailwind CSS config
 ├── tsconfig.json        # TypeScript config
@@ -89,21 +88,24 @@ npm run check    # Type check with TypeScript
 ## 🌐 Deployment
 
 ### Option 1: Deploy to Vercel
+
 ```bash
 npm install -g vercel
 vercel
 ```
 
 ### Option 2: Deploy to Netlify
+
 ```bash
 npm run build
-# Upload the dist/public folder to Netlify
+# Upload the dist folder to Netlify
 ```
 
 ### Option 3: Deploy to any static hosting
+
 ```bash
 npm run build
-# Upload contents of dist/public folder
+# Upload contents of the dist folder
 ```
 
 ## 🎯 Technology Stack
@@ -128,18 +130,18 @@ npm run build
 
 ### Adding New Sections
 
-1. Create a new component in `client/src/pages/` or add to `home.tsx`
+1. Create a new component in `src/pages/` or add to `home.tsx`
 2. Add an `id` attribute to the section
 3. Add a navigation link in the navbar
 4. The smooth scroll will work automatically
 
 ### Customizing Colors
 
-Edit `client/src/index.css` to change the color variables in the `:root` section.
+Edit `src/index.css` to change the color variables in the `:root` section.
 
 ### Changing Content
 
-All content is in `client/src/pages/home.tsx`. Edit the Marathi text directly in the JSX.
+All content is in `src/pages/home.tsx`. Edit the Marathi text directly in the JSX.
 
 ## 📝 License
 
@@ -148,6 +150,7 @@ This project is open source and available under the MIT License.
 ## 🤝 Support
 
 For issues or questions, please contact:
+
 - Email: grampanchayat@example.com
 - Phone: +91 98765 43210
 

@@ -9,6 +9,7 @@ Download the ZIP file and extract it to a folder.
 If you don't have Node.js installed, download it from: https://nodejs.org/
 
 Verify installation:
+
 ```bash
 node --version
 npm --version
@@ -33,6 +34,7 @@ npm run dev
 ```
 
 Output will show:
+
 ```
 VITE v5.4.20 ready in 123 ms
 
@@ -43,7 +45,7 @@ Open http://localhost:5173/ in your browser to see the portal.
 
 ## Step 5: Make Changes
 
-Edit files in `client/src/pages/home.tsx` and the changes will auto-reload in browser.
+Edit files in `src/pages/home.tsx` and the changes will auto-reload in browser.
 
 ## Step 6: Build for Production
 
@@ -53,7 +55,7 @@ When ready to deploy, build the optimized version:
 npm run build
 ```
 
-Output folder: `dist/public/`
+Output folder: `dist/`
 
 ## Step 7: Deploy
 
@@ -68,11 +70,11 @@ vercel
 
 1. `npm run build`
 2. Go to https://app.netlify.com
-3. Drag and drop the `dist/public` folder
+3. Drag and drop the `dist` folder
 
 ### Deploy to any web server
 
-Copy contents of `dist/public` folder to your web server.
+Copy contents of the `dist` folder to your web server.
 
 ---
 
@@ -81,6 +83,7 @@ Copy contents of `dist/public` folder to your web server.
 ### Port 5173 is already in use
 
 Change the port:
+
 ```bash
 npm run dev -- --port 3000
 ```
@@ -88,6 +91,7 @@ npm run dev -- --port 3000
 ### Module not found error
 
 Run:
+
 ```bash
 npm install
 ```
@@ -104,14 +108,14 @@ npm run dev
 ## Project Structure
 
 ```
-├── client/                 # Frontend code
-│   ├── src/
-│   │   ├── pages/        # Home page
-│   │   ├── components/   # UI components
-│   │   ├── lib/          # Utilities
-│   │   ├── index.css     # Global styles
-│   │   └── App.tsx
-│   └── index.html
+├── src/                   # Frontend code
+│   ├── pages/             # Home page
+│   ├── components/        # UI components
+│   ├── lib/               # Utilities
+│   ├── hooks/             # Custom hooks
+│   ├── index.css          # Global styles
+│   └── App.tsx
+├── public/                # Static assets
 ├── attached_assets/      # Images
 ├── vite.config.ts
 ├── tailwind.config.ts
@@ -121,10 +125,10 @@ npm run dev
 
 ## Key Files to Edit
 
-- **Content**: `client/src/pages/home.tsx` - All text and sections
-- **Colors**: `client/src/index.css` - Color variables
-- **Fonts**: `client/index.html` - Font imports
-- **Styling**: `client/src/index.css` - Global styles
+- **Content**: `src/pages/home.tsx` - All text and sections
+- **Colors**: `src/index.css` - Color variables
+- **Fonts**: `index.html` - Font imports
+- **Styling**: `src/index.css` - Global styles
 
 ---
 
