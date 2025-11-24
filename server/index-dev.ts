@@ -1,63 +1,56 @@
-import fs from "node:fs";
-import path from "node:path";
-import { type Server } from "node:http";
+import express from 'express';
+import path from 'path';
+import { createServer } from 'vite';
+import { fileURLToPath } from 'url';
 
-import { nanoid } from "nanoid";
-import { type Express } from "express";
-import { createServer as createViteServer, createLogger } from "vite";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-import viteConfig from "../vite.config";
-import runApp from "./app";
+async function startServer() {
+  const app = express();
 
-export async function setupVite(app: Express, server: Server) {
-  const viteLogger = createLogger();
-  const serverOptions = {
-    middlewareMode: true,
-    hmr: { server },
-    allowedHosts: true as const,
-  };
-
-  const vite = await createViteServer({
-    ...viteConfig,
-    configFile: false,
-    customLogger: {
-      ...viteLogger,
-      error: (msg, options) => {
-        viteLogger.error(msg, options);
-        process.exit(1);
-      },
-    },
-    server: serverOptions,
-    appType: "custom",
+  // Create Vite server in middleware mode
+  const vite = await createServer({
+    server: { middlewareMode: true },
+    appType: 'spa',
   });
 
+  // Use vite's connect instance as middleware
   app.use(vite.middlewares);
-  app.use("*", async (req, res, next) => {
-    const url = req.originalUrl;
 
+  // Fallback to index.html for SPA routing
+  app.get('*', async (req, res) => {
     try {
-      const clientTemplate = path.resolve(
-        import.meta.dirname,
-        "..",
-        "client",
-        "index.html",
+      let html = await vite.transformIndexHtml(
+        req.originalUrl,
+        `<html>
+          <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>अधिकृत ग्रामपंचायत पोर्टल</title>
+          </head>
+          <body>
+            <div id="root"></div>
+            <script type="module" src="/client/src/main.tsx"></script>
+          </body>
+        </html>`
       );
-
-      // always reload the index.html file from disk incase it changes
-      let template = await fs.promises.readFile(clientTemplate, "utf-8");
-      template = template.replace(
-        `src="/src/main.tsx"`,
-        `src="/src/main.tsx?v=${nanoid()}"`,
-      );
-      const page = await vite.transformIndexHtml(url, template);
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
+      res.setHeader('Content-Type', 'text/html');
+      res.end(html);
     } catch (e) {
-      vite.ssrFixStacktrace(e as Error);
-      next(e);
+      vite?.ssrFixStacktrace(e as Error);
+      res.status(500).end((e as Error).message);
     }
   });
+
+  const port = 5000;
+  const server = app.listen(port, '0.0.0.0', () => {
+    console.log(`[express] serving on port ${port}`);
+  });
+
+  return { app, vite, server };
 }
 
-(async () => {
-  await runApp(setupVite);
-})();
+startServer().catch((err) => {
+  console.error('Failed to start server:', err);
+  process.exit(1);
+});
